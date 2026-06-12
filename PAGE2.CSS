@@ -1,0 +1,202 @@
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background:#060008;
+  color:#f3efef;
+  text-align:center;
+}
+
+/* BACKGROUND */
+.hearts {
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(circle at top,#160018,#050008);
+}
+
+/* STARS */
+.star {
+  position: absolute;
+  color: #ff8fb3;
+  opacity: 0.7;
+  text-shadow:
+    0 0 6px rgba(255, 143, 179, 0.8),
+    0 0 14px rgba(255, 143, 179, 0.6);
+  animation: starTwinkle 8s ease-in-out infinite;
+}
+
+
+.line {
+  position: absolute;
+  height: 1px;
+  background: rgba(255, 143, 179, 0.25);
+  transform-origin: left center;
+}
+
+
+@keyframes starTwinkle {
+  0%   { opacity: 0.4; transform: scale(0.8); }
+  50%  { opacity: 1;   transform: scale(1.2); }
+  100% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* CONTENT */
+.container {
+  position:relative;
+  z-index:2;
+  padding:50px 20px;
+}
+
+.signature-text {
+  margin:30px 0;
+  color:#ff9ec4;
+  text-shadow:0 0 20px #ff9ec4;
+}
+
+.message {
+  margin-bottom:30px;
+}
+
+/* GALLERY */
+.gallery {
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.gallery img {
+  width:220px;
+  border-radius:20px;
+}
+
+
+
+/* MUSIC */
+.music-btn {
+  background:rgba(255,255,255,.2);
+  border:none;
+  padding:10px 20px;
+  border-radius:30px;
+  color:rgb(118, 37, 37);
+  cursor:pointer;
+}
+
+/* P2 */
+.P2 {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.8);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:10;
+}
+.P22 {
+  background:white;
+  color:#333;
+  padding:30px;
+  border-radius:20px;
+}
+
+/* GATE */
+.gate-overlay {
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#160018,#050008);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+  transition:opacity 1s;
+}
+.gate-box {
+  background:rgba(255,255,255,.05);
+  padding:40px;
+  border-radius:25px;
+}
+.gate-box input {
+  width:100%;
+  padding:10px;
+  border-radius:20px;
+  border:none;
+}
+.gate-box button {
+  margin-top:15px;
+  padding:10px 30px;
+  border:none;
+  border-radius:20px;
+  background:#ff7e9f;
+  color:white;
+}
+.gate-error {
+  margin-top:10px;
+  color:#ff6b6b;
+}
+/* LOVE CARD (SNOOPY) */
+.love-card {
+  margin: 40px auto;
+  max-width: 280px;
+  text-align: center;
+  animation: floatCard 4s ease-in-out infinite;
+}
+
+.love-card img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(255, 140, 180, 0.35);
+}
+
+.love-card p {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #ff9ec4;
+  text-shadow: 0 0 10px rgba(255,158,196,0.6);
+}
+
+@keyframes floatCard {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.image-box p {
+  position: relative;
+  z-index: 3;
+  
+  color: #ffffff;
+
+
+}
+@keyframes pulse{
+  from{ text-shadow:0 0 10px #ff8fb3; }
+  to{ text-shadow:0 0 25px #ff8fb3; }
+}
+
+.shooting-star{
+  position:fixed;
+  border-radius:50px;
+  background:linear-gradient(
+    90deg,
+    rgba(255,255,255,1) 0%,
+    rgba(255,214,240,0.8) 40%,
+    rgba(255,110,199,0.5) 70%,
+    transparent 100%
+  );
+  animation:shoot linear forwards;
+  z-index:5;
+  filter:
+    drop-shadow(0 0 10px #fff)
+    drop-shadow(0 0 25px #ff9ec4)
+    drop-shadow(0 0 50px #ff6ec7);
+}
+@keyframes shoot{
+  from{
+    transform:translateX(0) translateY(0) rotate(var(--angle));
+    opacity:1;
+  }
+  to{
+    transform:translateX(-150vw) translateY(350px) rotate(var(--angle));
+    opacity:0;
+  }
+}
